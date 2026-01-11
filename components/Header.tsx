@@ -1,0 +1,24 @@
+
+import React from 'react';
+
+const Header: React.FC = () => {
+  return (
+    <header className="bg-white shadow-sm py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+      <div className="flex items-center gap-3">
+        <div className="bg-orange-500 rounded-2xl px-3 py-1 flex items-center justify-center text-white font-brand font-bold text-lg shadow-md border-2 border-white transform -rotate-2">
+          Dorakid
+        </div>
+        <h1 className="text-xl sm:text-2xl font-brand font-bold bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
+          Smart Explorer
+        </h1>
+      </div>
+      <div className="hidden md:flex gap-4 items-center">
+        <span className="text-xs bg-sky-100 text-sky-700 px-3 py-1 rounded-full font-semibold uppercase tracking-wider">
+          Healthy Body • Sharp Mind
+        </span>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
