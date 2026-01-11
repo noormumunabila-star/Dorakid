@@ -7,9 +7,10 @@ interface ResultScreenProps {
   total: number;
   onRestart: () => void;
   category: Category;
+  onViewLeaderboard: () => void;
 }
 
-const ResultScreen: React.FC<ResultScreenProps> = ({ score, total, onRestart, category }) => {
+const ResultScreen: React.FC<ResultScreenProps> = ({ score, total, onRestart, category, onViewLeaderboard }) => {
   const percentage = (score / total) * 100;
   
   let message = "Keep learning! You're getting smarter every day!";
@@ -26,7 +27,6 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, total, onRestart, ca
   return (
     <div className="max-w-xl mx-auto text-center space-y-8 animate-in fade-in scale-95 duration-700">
       <div className="bg-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
-        {/* Decorative elements */}
         <div className="absolute -top-10 -right-10 w-40 h-40 bg-orange-100 rounded-full opacity-50" />
         <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-sky-100 rounded-full opacity-50" />
         
@@ -66,12 +66,19 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ score, total, onRestart, ca
               Play Another Quiz
             </button>
             <button
-              onClick={() => window.location.reload()}
-              className="flex-grow bg-sky-100 text-sky-700 hover:bg-sky-200 font-bold py-4 rounded-2xl transition-all"
+              onClick={onViewLeaderboard}
+              className="flex-grow bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 rounded-2xl shadow-lg transition-all"
             >
-              Start Over
+              See Hall of Fame 🏆
             </button>
           </div>
+          
+          <button
+            onClick={() => window.location.reload()}
+            className="w-full mt-4 text-slate-400 hover:text-slate-600 font-bold text-sm transition-all"
+          >
+            Start Fresh
+          </button>
         </div>
       </div>
 

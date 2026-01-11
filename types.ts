@@ -31,3 +31,13 @@ export interface UserProfile {
   phoneNumber: string;
   ageRange: AgeRange;
 }
+
+export interface LeaderboardEntry {
+  id: string;
+  name: string;
+  score: number;
+  total: number;
+  category: string;
+  date: string;
+  isUser?: boolean;
+}
